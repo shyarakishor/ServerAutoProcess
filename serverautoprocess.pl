@@ -36,7 +36,8 @@ if ( !defined $config_file ) {
 #################
 # Config Values #
 #################
-my $CONFIG_FILE = "$base_dir/resources/$config_file";
+# my $CONFIG_FILE = "$base_dir/resources/$config_file";
+my $CONFIG_FILE = $config_file;
 
 # Load Config Data #######################################	
 my $filedata = LoadFile($CONFIG_FILE);
