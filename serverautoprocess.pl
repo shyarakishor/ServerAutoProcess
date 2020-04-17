@@ -28,11 +28,10 @@ use Data::Dumper;
 my $VERSION = "1.0.0";
 ##################################################
 
-my $q = new CGI;
-
-print $q->header;
-
-my $config_file = $q->param('config_file') || 'deadcheckconf.yml';
+my $config_file = $ARGV[0];
+if ( !defined $config_file ) {
+	print "Please mentioned config file as a first argument. \n";exit;
+}
 
 #################
 # Config Values #
