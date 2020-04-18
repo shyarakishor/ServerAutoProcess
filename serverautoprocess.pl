@@ -88,7 +88,7 @@ if( scalar @$servers ) {
 		$server =~ s/\r|\n//g;
 		next if $server =~ /^\s*$/;
 
-		`AR_PA9 $server% | sed /Job/d | sed /__/d | sed /$autoserv/d | sed '/^$/d' | awk '{ print $1 ","  $2 "," $3 "," $4 "," $5 "," $6}' > $temp_file`;
+		`AR_PA9 $server% | sed /Job/d | sed /__/d | sed /AUTOSERV/d | sed '/^$/d' | awk '{ print $1 ","  $2 "," $3 "," $4 "," $5 "," $6}' > $temp_file`;
 
 		if ( -e $temp_file && -s $temp_file ) {
 			open(LOGFILE, $temp_file);
